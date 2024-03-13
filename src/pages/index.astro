@@ -1,16 +1,37 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LandingPageMainButton from "../components/LandingPageMainButton.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <main class="flex flex-col items-center">
+    <section class="mx-auto text-center flex flex-col fs-base">
+      <span class="ff-sans-condensed text-light letter-spacing-3 uppercase"
+        >So, you want to travel to</span
+      >
+      <h1 class="ff-serif fs-4xl uppercase">Space</h1>
+      <p class="text-light">
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
+    </section>
+    <LandingPageMainButton />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    gap: 5.5rem;
+  }
+  main section {
+    width: 86%;
+    max-width: 450px;
+    gap: 1rem;
+    margin-block-start: 1.5rem;
+  }
+  main section > p {
+    font-size: 0.938rem;
+  }
+</style>

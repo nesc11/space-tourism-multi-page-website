@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/shared/logo.svg";
+import hamburger from "../assets/shared/icon-hamburger.svg";
+---
+
+<header>
+  <div class="wrapper flex mx-auto">
+    <a href=""><Image src={logo} alt="Logo" /></a>
+    <nav>
+      <Image src={hamburger} alt="hamburger menu icon" />
+    </nav>
+  </div>
+</header>
+
+<style>
+  header .wrapper {
+    width: 86%;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.5rem;
+  }
+</style>
