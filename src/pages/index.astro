@@ -5,6 +5,7 @@ import LandingPageMainButton from "../components/LandingPageMainButton.astro";
 
 <BaseLayout>
   <main class="flex flex-col items-center">
+    <div class="background-image-container"></div>
     <section class="mx-auto text-center flex flex-col fs-base">
       <span class="ff-sans-condensed text-light letter-spacing-3 uppercase"
         >So, you want to travel to</span
@@ -33,5 +34,39 @@ import LandingPageMainButton from "../components/LandingPageMainButton.astro";
   }
   main section > p {
     font-size: 0.938rem;
+  }
+  .background-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    z-index: -100;
+    background-image: url("../assets/home/background-home-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media (min-width: 48em) {
+    .background-image-container {
+      background-image: url("../assets/home/background-home-tablet.jpg");
+    }
+    main {
+      gap: 9rem;
+    }
+    main section {
+      margin-block-start: 6.3rem;
+    }
+    main section > span {
+      font-size: 1.25rem;
+      letter-spacing: 3.38px;
+    }
+
+    h1 {
+      font-size: var(--fs-6xl);
+    }
+    main section > p {
+      font-size: 1rem;
+    }
   }
 </style>
