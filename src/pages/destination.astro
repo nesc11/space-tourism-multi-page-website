@@ -1,0 +1,176 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import imageMoon from "../assets/destination/image-moon.png";
+---
+
+<BaseLayout>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <h2 class="uppercase ff-sans-condensed fs-base letter-spacing-3">
+          <span>01</span>
+          <span>Pick your destination</span>
+        </h2>
+        <Image class="moon-image" src={imageMoon} alt="Image of the moon" />
+      </section>
+      <section>
+        <div>
+          <div
+            class="destination-links ff-sans-condensed fs-sm text-light uppercase letter-spacing-2"
+          >
+            <a href="">Moon</a>
+            <a href="">Mars</a>
+            <a href="">Europa</a>
+            <a href="">Titan</a>
+          </div>
+          <h1 class="uppercase ff-serif fs-56 destination-title">Moon</h1>
+          <p class="text-light fs-15 destination-description">
+            See our planet as you’ve never seen it before. A perfect relaxing
+            trip away to help regain perspective and come back refreshed. While
+            you’re there, take in some history by visiting the Luna 2 and Apollo
+            11 landing sites.
+          </p>
+        </div>
+        <hr />
+        <div class="distance-time">
+          <div class="uppercase distance">
+            <span class="text-light ff-sans-condensed fs-sm letter-spacing-2"
+              >Avg. distance</span
+            >
+            <span class="ff-serif fs-28">384,400 km</span>
+          </div>
+          <div class="uppercase time">
+            <span class="text-light ff-sans-condensed fs-sm letter-spacing-2"
+              >Est. travel time</span
+            >
+            <span class="ff-serif fs-28">3 days</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+
+  <style>
+    .fs-56 {
+      font-size: 3.5rem;
+    }
+    .fs-28 {
+      font-size: 1.75rem;
+    }
+    .fs-15 {
+      font-size: 0.935rem;
+    }
+    body {
+      background-image: url("../assets/destination/background-destination-mobile.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-block: 2rem;
+      text-align: center;
+      /* gap: 5.5rem; */
+    }
+    main > section {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 86%;
+      margin-inline: auto;
+    }
+    main > section:nth-child(2) {
+      max-width: 573px;
+    }
+    .moon-image {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      margin-inline: auto;
+    }
+    .destination-links {
+      padding-block: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .distance-time {
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      gap: 1.5rem;
+    }
+    .distance,
+    .time {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    @media (min-width: 48em) {
+      body {
+        background-image: url("../assets/destination/background-destination-tablet.jpg");
+      }
+      main section {
+        width: 92%;
+        gap: 3rem;
+      }
+
+      h2 {
+        text-align: start;
+        letter-spacing: 3.38px;
+        font-size: var(--fs-xl);
+      }
+
+      .moon-image {
+        width: 300px;
+        height: 300px;
+      }
+      .destination-links {
+        font-size: var(--fs-base);
+        letter-spacing: 2.7px;
+        padding-block: 2.5rem;
+      }
+      .destionation-title {
+        font-size: 5rem;
+      }
+      .destination-description {
+        font-size: var(--fs-base);
+        padding-block: 1rem;
+      }
+      .distance-time {
+        flex-direction: row;
+        justify-content: center;
+        gap: 4rem;
+      }
+    }
+
+    @media (min-width: 64em) {
+      body {
+        background-image: url("../assets/home/background-home-desktop.jpg");
+      }
+      main {
+        flex-direction: row;
+        align-items: center;
+      }
+      main section {
+        text-align: start;
+      }
+      main section > span {
+        font-size: 1.75rem;
+        letter-spacing: 4.72px;
+      }
+      main section > p {
+        font-size: var(--fs-lg);
+      }
+    }
+  </style>
+</BaseLayout>
