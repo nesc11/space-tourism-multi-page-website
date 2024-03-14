@@ -58,18 +58,40 @@ import hamburger from "../assets/shared/icon-hamburger.svg";
     }
     nav {
       padding: 2.5rem 2.5rem;
-      background-color: hsl(var(--clr-dark));
+      background-color: hsl(var(--clr-white) / 0.04);
     }
     .nav-links {
       display: flex;
       gap: 3rem;
       font-size: var(--fs-sm);
     }
-    .nav-link > span:nth-child(2) {
-      letter-spacing: 2.36px;
-    }
     .nav-link-number {
       display: none;
+    }
+    .nav-link > span {
+      letter-spacing: 2.36px;
+    }
+  }
+  @media (min-width: 64em) {
+    header .wrapper {
+      margin-top: 2.5rem;
+    }
+    nav {
+      padding-inline-start: 9.5rem;
+      padding-inline-end: 10rem;
+    }
+    .nav-links {
+      font-size: var(--fs-base);
+    }
+    .nav-link {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .nav-link-number {
+      display: block;
+    }
+    .nav-link > span {
+      letter-spacing: 2.7px;
     }
   }
 </style>

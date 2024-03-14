@@ -1,72 +1,109 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LandingPageMainButton from "../components/LandingPageMainButton.astro";
+import Header from "../components/Header.astro";
 ---
 
 <BaseLayout>
-  <main class="flex flex-col items-center">
-    <div class="background-image-container"></div>
-    <section class="mx-auto text-center flex flex-col fs-base">
-      <span class="ff-sans-condensed text-light letter-spacing-3 uppercase"
-        >So, you want to travel to</span
-      >
-      <h1 class="ff-serif fs-4xl uppercase">Space</h1>
-      <p class="text-light">
-        Let’s face it; if you want to go to space, you might as well genuinely
-        go to outer space and not hover kind of on the edge of it. Well sit
-        back, and relax because we’ll give you a truly out of this world
-        experience!
-      </p>
-    </section>
-    <LandingPageMainButton />
-  </main>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <span>So, you want to travel to</span>
+        <h1>Space</h1>
+        <p>
+          Let’s face it; if you want to go to space, you might as well genuinely
+          go to outer space and not hover kind of on the edge of it. Well sit
+          back, and relax because we’ll give you a truly out of this world
+          experience!
+        </p>
+      </section>
+      <LandingPageMainButton />
+    </main>
+  </body>
 </BaseLayout>
 
 <style>
+  body {
+    background-image: url("../assets/home/background-home-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+  }
   main {
-    gap: 5.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    padding-block: 2rem;
+    /* gap: 5.5rem; */
   }
   main section {
     width: 86%;
     max-width: 450px;
+    margin-inline: auto;
+    display: grid;
     gap: 1rem;
-    margin-block-start: 1.5rem;
+    text-align: center;
+    /* margin-block-start: -1.5rem; */
+  }
+  main section > span {
+    font-family: var(--ff-sans-condensed);
+    font-size: var(--fs-base);
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+    color: hsl(var(--clr-light));
+  }
+  h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-family: var(--ff-serif);
   }
   main section > p {
     font-size: 0.938rem;
-  }
-  .background-image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    min-height: 100vh;
-    z-index: -100;
-    background-image: url("../assets/home/background-home-mobile.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    color: hsl(var(--clr-light));
   }
 
   @media (min-width: 48em) {
-    .background-image-container {
+    body {
       background-image: url("../assets/home/background-home-tablet.jpg");
     }
     main {
-      gap: 9rem;
-    }
-    main section {
-      margin-block-start: 6.3rem;
+      gap: 5rem;
+      justify-content: space-around;
     }
     main section > span {
-      font-size: 1.25rem;
+      font-size: var(--fs-xl);
       letter-spacing: 3.38px;
     }
-
     h1 {
-      font-size: var(--fs-6xl);
+      font-size: 9.375rem;
     }
     main section > p {
-      font-size: 1rem;
+      font-size: var(--fs-base);
+    }
+  }
+
+  @media (min-width: 64em) {
+    body {
+      background-image: url("../assets/home/background-home-desktop.jpg");
+    }
+    main {
+      flex-direction: row;
+      align-items: center;
+    }
+    main section {
+      text-align: start;
+    }
+    main section > span {
+      font-size: 1.75rem;
+      letter-spacing: 4.72px;
+    }
+    main section > p {
+      font-size: var(--fs-lg);
     }
   }
 </style>

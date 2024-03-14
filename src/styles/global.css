@@ -4,15 +4,16 @@
     --ff-sans-condensed: "Barlow Condensed", sans-serif;
     --ff-serif: "Bellefair", serif;
     /* Font sizes */
+    --fs-xs: 0.75rem;
     --fs-sm: 0.875rem;
     --fs-base: 1rem;
     --fs-lg: 1.125rem;
-    --fs-xl: 1.75rem;
-    --fs-2xl: 2rem;
-    --fs-3xl: 3.5rem;
-    --fs-4xl: 5rem;
-    --fs-5xl: 6.25rem;
-    --fs-6xl: 9.375rem;
+    --fs-xl: 1.25rem;
+    --fs-2xl: 1.5rem;
+    --fs-3xl: 1.875rem;
+    --fs-4xl: 2.25rem;
+    --fs-5xl: 3rem;
+    --fs-6xl: 3.75rem;
 
     /* Colors */
     --clr-dark: 230 35% 7%;
@@ -39,6 +40,7 @@ html {
 }
 
 body {
+    min-height: 100vh;
     font-family: var(--ff-sans);
     font-size: var(--fs-lg);
     font-weight: 400;
