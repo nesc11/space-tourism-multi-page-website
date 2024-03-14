@@ -139,7 +139,7 @@ import imageMoon from "../assets/destination/image-moon.png";
         letter-spacing: 2.7px;
         padding-block: 2.5rem;
       }
-      .destionation-title {
+      .destination-title {
         font-size: 5rem;
       }
       .destination-description {
@@ -155,21 +155,44 @@ import imageMoon from "../assets/destination/image-moon.png";
 
     @media (min-width: 64em) {
       body {
-        background-image: url("../assets/home/background-home-desktop.jpg");
+        background-image: url("../assets/destination/background-destination-desktop.jpg");
       }
       main {
         flex-direction: row;
         align-items: center;
+        gap: 9rem;
       }
       main section {
         text-align: start;
+        width: auto;
       }
-      main section > span {
+      main section:nth-child(1) {
+        margin-inline: auto 0;
+        gap: 5rem;
+      }
+      main section:nth-child(2) {
+        max-width: 444px;
+        margin-inline: 0 auto;
+      }
+      h2 {
+        text-align: start;
         font-size: 1.75rem;
-        letter-spacing: 4.72px;
       }
-      main section > p {
+      .moon-image {
+        width: 445px;
+        height: 445px;
+      }
+      .destination-links {
+        justify-content: start;
+      }
+      .destination-title {
+        font-size: 6.25rem;
+      }
+      .destination-description {
         font-size: var(--fs-lg);
+      }
+      .distance-time {
+        justify-content: start;
       }
     }
   </style>
